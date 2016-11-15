@@ -2,5 +2,4 @@ __pycache__
 .idea
 *.swp
 *.db
-
-
+settings_local.py

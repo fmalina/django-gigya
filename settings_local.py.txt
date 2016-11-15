@@ -1,0 +1,2 @@
+GIGYA_API_KEY = ''
+
