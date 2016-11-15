@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- gigya.js script should only be included once -->
+<script src="http://cdn.gigya.com/js/gigya.js?apiKey={{ api_key }}">
+{
+	siteName: 'parent.smartbuy.com'
+	,enabledProviders: 'facebook,googleplus'
+}
+</script>
+</head>
+<body>
+<script>
+var login_params = {
+	version: 2
+	,showTermsLink: 'false'
+	,height: 100
+	,width: 330
+	,containerID: 'componentDiv'
+	,buttonsStyle: 'fullLogoColored'
+	,autoDetectUserProviders: ''
+	,facepilePosition: 'none'
+}
+</script>
+<div id="componentDiv"></div>
+<script>
+   gigya.socialize.showLoginUI(login_params);
+</script>
+</body>
+</html>

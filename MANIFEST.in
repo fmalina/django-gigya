@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+include requirements.txt
+graft gigya
+recursive-include gigya/templates *
+recursive-include gigya/static *
