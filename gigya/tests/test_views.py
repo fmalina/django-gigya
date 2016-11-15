@@ -7,7 +7,7 @@ def index(request):
     })
 
 
-def registration(request):
+def account(request):
     return render(request, 'gigya/registration.html', {
         'api_key': app_settings.GIGYA_API_KEY
     })
