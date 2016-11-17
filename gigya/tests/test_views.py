@@ -10,12 +10,10 @@ from gigya.forms import (
 )
 
 def index(request):
-    return render(request, 'gigya/index.html', {
-        'api_key': app_settings.GIGYA_API_KEY
-    })
+    return render(request, 'gigya/index.html', {})
 
 
-def account(request):
+def register(request):
     if request.method == 'POST':
         form = RegistrationForm(data=request.POST)
         if form.is_valid():
@@ -26,7 +24,11 @@ def account(request):
             r2 = api.request('accounts.register', {
                 'email': d['email'],
                 'password': d['password'],
-                'regToken': token
+                'regToken': token,
+                'profile': {
+                    'firstName': d['first_name'],
+                    'lastName': d['last_name'],
+                }
             })
             errorCode = r2.data['errorCode']
             if errorCode == GigyaAuth.ERROR_CODE_SUCCESS:
@@ -56,3 +58,14 @@ def login(request):
     return render(request, 'gigya/login.html', {
         'form': form
     })
+
+# ...
+
+# Logout
+
+# Link Accounts
+
+# 3 rd party auth login(Gigya's social login plugin)
+
+# Missing email
+

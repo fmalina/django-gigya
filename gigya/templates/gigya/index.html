@@ -1,29 +1,13 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>GIGYA integration test</title>
-<meta name="viewport" content="width=device-width">
-<script src="https://cdns.gigya.com/js/gigya.js?apiKey={{ api_key }}">{
-	siteName: 'parent.smartbuy.com',
-	enabledProviders: 'facebook,googleplus'
-}</script>
-</head>
-<body>
-<script>
-var login_params = {
-	version: 2,
-	showTermsLink: 'false',
-	height: 100,
-	width: 330,
-	containerID: 'componentDiv',
-	buttonsStyle: 'fullLogoColored',
-	autoDetectUserProviders: '',
-	facepilePosition: 'none'
-}
-</script>
-<div id="componentDiv"></div>
-<script>
-   gigya.socialize.showLoginUI(login_params);
-</script>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+<ul class="list-inline">
+    <li><a href="register">Register</a>
+    <li><a href="login">Login</a>
+    <li><a href="logout">Logout</a>
+</ul>
+{% endblock %}

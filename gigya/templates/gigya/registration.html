@@ -1,5 +1,10 @@
 <form action="" method="post">
     <h1>Register</h1>
+    <div id="componentDiv"></div>
+    <script>
+       gigya.socialize.showLoginUI(login_params);
+    </script>
+
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" class="btn btn-primary" value="Register">

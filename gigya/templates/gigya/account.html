@@ -1,5 +1,27 @@
 {% extends "base.html" %}
+
+{% block title %}Account registration{% endblock %}
+
+{% block head %}
+<script src="https://cdns.gigya.com/js/gigya.js?apiKey={{ api_key }}">{
+	siteName: 'parent.smartbuy.com',
+	enabledProviders: 'facebook,googleplus'
+}</script>
+{% endblock %}
+
 {% block body %}
+    <script>
+    var login_params = {
+        version: 2,
+        showTermsLink: 'false',
+        height: 100,
+        width: 330,
+        containerID: 'componentDiv',
+        buttonsStyle: 'fullLogoColored',
+        autoDetectUserProviders: '',
+        facepilePosition: 'none'
+    }
+    </script>
     <div class="col-xs-12">
         <div class="col-xs-12 col-lg-4 col-md-6 col-center">
         {% include 'gigya/registration.html' %}
