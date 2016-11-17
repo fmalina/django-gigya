@@ -1,0 +1,27 @@
+{
+  "browsersync": {
+    "proxy": "localhost:8000",
+    "port": 3000,
+    "ui": {
+      "port": 3001
+    },
+    "open": false,
+    "notify": false
+  },
+  "src": {
+    "fonts": "bower_components/bootstrap-sass/assets/fonts/bootstrap/**/*.*",
+    "scss": {
+      "client": "django-gigya/static/gigya/scss/**/*.scss",
+      "entry": {
+        "client": "gigya/static/gigya/scss/django-gigya.scss"
+      },
+      "paths": [
+        "bower_components/bootstrap-sass/assets/stylesheets",
+        "bower_components/breakpoint-sass/stylesheets"
+      ]
+    }
+  },
+  "dest": {
+    "client": "gigya/static/gigya/"
+  }
+}

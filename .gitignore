@@ -3,3 +3,9 @@ __pycache__
 *.swp
 *.db
 settings_local.py
+
+
+
+# Frontend dependencies
+bower_components/
+node_modules/
