@@ -25,7 +25,7 @@ def account(request):
                 'password': d['password'],
                 'regToken': token
             })
-            return HttpResponse('Gigya says: %s' % r2)
+            return HttpResponse(r2)
     else:
         form = RegistrationForm()
     return render(request, 'gigya/account.html', {
