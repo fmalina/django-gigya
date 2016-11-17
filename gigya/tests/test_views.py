@@ -7,12 +7,10 @@ from gigya import app_settings
 from gigya.forms import RegistrationForm
 
 def index(request):
-    return render(request, 'gigya/index.html', {
-        'api_key': app_settings.GIGYA_API_KEY
-    })
+    return render(request, 'gigya/index.html', {})
 
 
-def account(request):
+def register(request):
     if request.method == 'POST':
         form = RegistrationForm(data=request.POST)
         if form.is_valid():
