@@ -17,10 +17,7 @@ add 'gigya' app to your installed apps.
 
     ./manage.py runserver
 
+Development
+-----------
 
- - Registration
- - Login
- - Logout
- - Link Accounts
- - 3rd party auth login (Gigya's social login plugin)
- - Missing email
+CSS used in test views is compiled using Compass with config.rb in the root folder of the project.

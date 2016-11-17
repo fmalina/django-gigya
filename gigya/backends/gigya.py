@@ -1,5 +1,5 @@
 """
-GRequest class implementing calls to GIGYA REST API
+GigyaAuth class implementing calls to GIGYA REST API
 
 method = "socialize.setStatus"
 params = {"uid": "PUT-UID-HERE", "status": "I feel great"}

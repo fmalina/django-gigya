@@ -24,3 +24,7 @@ class RegistrationForm(BootstrapFormMixin, forms.Form):
         if len(password) < 8:
             raise forms.ValidationError('Minimum password length of 8 characters is required')
         return password
+
+class LoginForm(BootstrapFormMixin, forms.Form):
+    email = forms.EmailField(label='Email', max_length=100)
+    password = forms.CharField(label='Password', widget=forms.PasswordInput)
