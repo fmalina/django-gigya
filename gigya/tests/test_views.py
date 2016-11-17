@@ -17,7 +17,8 @@ def account(request):
         form = RegistrationForm(data=request.POST)
         if form.is_valid():
             d = form.cleaned_data
-            r = GigyaAuth.request('accounts.register', {
+            api = GigyaAuth()
+            r = api.request('accounts.register', {
                 'username': d['email'],
                 'email': d['email'],
                 'password': d['password'],

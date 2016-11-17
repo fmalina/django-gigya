@@ -8,7 +8,7 @@ from GSSDK import GSRequest, SigUtils
 from django.conf import settings
 
 
-class GigyaAuth():
+class GigyaAuth:
     def request(self, method, params):
         r = GSRequest(settings.GIGYA_API_KEY, settings.GIGYA_SECRET_KEY, method, params)
         r.setAPIDomain(settings.GIGYA_API_DOMAIN)
