@@ -17,3 +17,9 @@ class RegistrationForm(forms.Form):
         if confirm_passoword != password:
             raise forms.ValidationError('Confirm password must match password')
         return confirm_passoword
+
+    def clean_password(self):
+        password = self.cleaned_data['password']
+        if len(password) < 8:
+            raise forms.ValidationError('Minimum password length of 8 characters is required')
+        return password

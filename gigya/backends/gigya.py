@@ -15,7 +15,6 @@ class GigyaAuth:
         response = r.send()
 
         if response.getErrorCode() != 0:  # response status NOT OK
-            print("Error")
-            return (response.getErrorMessage(),
-                    response.getLog())
+            print(response.getErrorMessage())
+            print(response.getLog())
         return response
