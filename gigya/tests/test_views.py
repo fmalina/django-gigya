@@ -21,7 +21,6 @@ def account(request):
             get_token = api.request('accounts.initRegistration', {})
             token = get_token.data['regToken']
             r2 = api.request('accounts.register', {
-                'username': d['email'],
                 'email': d['email'],
                 'password': d['password'],
                 'regToken': token
