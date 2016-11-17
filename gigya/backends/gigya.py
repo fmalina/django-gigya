@@ -9,6 +9,11 @@ from django.conf import settings
 
 
 class GigyaAuth:
+
+    ERROR_CODE_VALIDATION = 400009
+    ERROR_CODE_UNIQUE_IDENTIFIER_EXISTS = 400003
+    ERROR_CODE_SUCCESS = 0
+
     def request(self, method, params):
         r = GSRequest(settings.GIGYA_API_KEY, settings.GIGYA_SECRET_KEY, method, params)
         r.setAPIDomain(settings.GIGYA_API_DOMAIN)

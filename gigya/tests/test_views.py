@@ -28,7 +28,16 @@ def account(request):
                 'password': d['password'],
                 'regToken': token
             })
-            return HttpResponse(r2)
+            errorCode = r2.data['errorCode']
+            if errorCode == GigyaAuth.ERROR_CODE_SUCCESS:
+                return render(request, 'gigya/registration-success.html')
+            else:
+                if errorCode == GigyaAuth.ERROR_CODE_VALIDATION:
+                    for error_details in r2.data['validationErrors']:
+                        if error_details['errorCode'] == GigyaAuth.ERROR_CODE_UNIQUE_IDENTIFIER_EXISTS:
+                            field_name = error_details['fieldName']
+                            if field_name == 'email':
+                                form.add_error('email', 'Email already exists')
     else:
         form = RegistrationForm()
     return render(request, 'gigya/account.html', {

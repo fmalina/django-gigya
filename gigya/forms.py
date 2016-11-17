@@ -13,11 +13,11 @@ class RegistrationForm(BootstrapFormMixin, forms.Form):
     )
 
     def clean_confirm_password(self):
-        password = self.cleaned_data['password']
-        confirm_passoword = self.cleaned_data['confirm_password']
-        if confirm_passoword != password:
+        password = self.cleaned_data.get('password')
+        confirm_password = self.cleaned_data['confirm_password']
+        if password and confirm_password != password:
             raise forms.ValidationError('Confirm password must match password')
-        return confirm_passoword
+        return confirm_password
 
     def clean_password(self):
         password = self.cleaned_data['password']
