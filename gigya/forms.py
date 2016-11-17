@@ -1,7 +1,8 @@
 from django import forms
+from .utils import BootstrapFormMixin
 
 
-class RegistrationForm(forms.Form):
+class RegistrationForm(BootstrapFormMixin, forms.Form):
     first_name = forms.CharField(label='First Name', max_length=100)
     last_name = forms.CharField(label='Last Name', max_length=100)
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
