@@ -24,7 +24,11 @@ def register(request):
             r2 = api.request('accounts.register', {
                 'email': d['email'],
                 'password': d['password'],
-                'regToken': token
+                'regToken': token,
+                'profile': {
+                    'firstName': d['first_name'],
+                    'lastName': d['last_name'],
+                }
             })
             return HttpResponse(r2)
     else:
