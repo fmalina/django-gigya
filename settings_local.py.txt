@@ -1,2 +1,2 @@
 GIGYA_API_KEY = ''
-
+GIGYA_SECRET_KEY = ''

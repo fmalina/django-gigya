@@ -16,3 +16,11 @@ add 'gigya' app to your installed apps.
     ./manage.py migrate
 
     ./manage.py runserver
+
+
+ - Registration
+ - Login
+ - Logout
+ - Link Accounts
+ - 3rd party auth login (Gigya's social login plugin)
+ - Missing email
