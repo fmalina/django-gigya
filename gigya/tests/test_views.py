@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from gigya.backends.gigya import GigyaAuth
+
 
 from gigya import app_settings
 from gigya.forms import RegistrationForm
@@ -14,7 +16,14 @@ def account(request):
     if request.method == 'POST':
         form = RegistrationForm(data=request.POST)
         if form.is_valid():
-            return HttpResponse('Submitting to Gigya')
+            d = form.cleaned_data
+            r = GigyaAuth.request('accounts.register', {
+                'username': d['email'],
+                'email': d['email'],
+                'password': d['password'],
+                'regToken': 'foo.bar'
+            })
+            return HttpResponse('Gigya says', r.getResponseText())
     else:
         form = RegistrationForm()
     return render(request, 'gigya/account.html', {
