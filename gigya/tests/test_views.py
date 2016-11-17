@@ -28,6 +28,7 @@ def account(request):
                 'regToken': 'foo.bar'
             })
             return HttpResponse('Gigya says', r.getResponseText())
+
     else:
         form = RegistrationForm()
     return render(request, 'gigya/account.html', {
