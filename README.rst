@@ -24,3 +24,9 @@ add 'gigya' app to your installed apps.
  - Link Accounts
  - 3rd party auth login (Gigya's social login plugin)
  - Missing email
+
+
+Development
+-----------
+
+CSS used in test views are compiled using compass with config.rb in the root folder of the project.
