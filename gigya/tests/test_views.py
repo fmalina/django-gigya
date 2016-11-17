@@ -21,14 +21,14 @@ def account(request):
         if form.is_valid():
             d = form.cleaned_data
             api = GigyaAuth()
-            r = api.request('accounts.register', {
-                'username': d['email'],
+            get_token = api.request('accounts.initRegistration', {})
+            token = get_token.data['regToken']
+            r2 = api.request('accounts.register', {
                 'email': d['email'],
                 'password': d['password'],
-                'regToken': 'foo.bar'
+                'regToken': token
             })
-            return HttpResponse('Gigya says', r.getResponseText())
-
+            return HttpResponse(r2)
     else:
         form = RegistrationForm()
     return render(request, 'gigya/account.html', {

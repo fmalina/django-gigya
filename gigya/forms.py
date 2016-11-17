@@ -19,6 +19,11 @@ class RegistrationForm(BootstrapFormMixin, forms.Form):
             raise forms.ValidationError('Confirm password must match password')
         return confirm_passoword
 
+    def clean_password(self):
+        password = self.cleaned_data['password']
+        if len(password) < 8:
+            raise forms.ValidationError('Minimum password length of 8 characters is required')
+        return password
 
 class LoginForm(BootstrapFormMixin, forms.Form):
     email = forms.EmailField(label='Email', max_length=100)
